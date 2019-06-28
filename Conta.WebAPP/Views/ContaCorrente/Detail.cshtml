@@ -1,0 +1,55 @@
+﻿@model Conta.Application.ViewModels.ContaCorrenteModel
+
+@{
+    ViewData["Title"] = "Conta Corrente";
+}
+
+<br /><br /><br />
+<div class="book-example panel panel-primary">
+    <div class="panel-heading panel-head">Conta Corrente</div>
+    <div class="panel-body">
+
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.IdConta)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IdConta)
+            </dd>
+        </dl>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ValorAtual)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ValorAtual)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CotacaoDolar)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CotacaoDolar)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ValorAtualDolar)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ValorAtualDolar)
+            </dd>
+        </dl>
+
+        <div class="form-group">
+            <div class="col-md-4 text-right">
+                <a asp-action="Index" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-triangle-left"></span> Voltar
+                </a>                
+            </div>
+        </div>
+    </div>
+</div>

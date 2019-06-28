@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Conta.Application.ViewModels.ContaCorrenteModel>
+
+@{
+    ViewData["Title"] = "Conta Corrente";
+}
+
+<br /><br /><br />
+<div class="panel panel-primary">
+    <div class="panel-heading panel-head">
+        Listagem de Contas Corrente
+    </div>
+
+    <div class="panel-body">
+        <a id="createEditBookModal" href="@Url.Action("Create")" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus"></span> Conta Corrente
+        </a>
+        @if (Model != null)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IdConta)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ValorAtual)
+                        </th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IdConta)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ValorAtual)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink("Visualizar", "Detail", new { id = item.IdConta }, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Creditar", "Creditar", "Movimentacao", new { idConta = item.IdConta }, new { @class = "btn btn-success" })
+                                @Html.ActionLink("Debitar", "Debitar", "Movimentacao", new { idConta = item.IdConta }, new { @class = "btn btn-danger" })
+                                @Html.ActionLink("Histórico", "Index", "Movimentacao", new { idConta = item.IdConta }, new { @class = "btn btn-default" })
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
