@@ -9,7 +9,7 @@ namespace Conta.Repository.Repositories
 {
     public class ContaCorrenteRepository : IContaCorrenteRepository
     {
-        private readonly string StringConexao = @"Server=ebilieri.database.windows.net;Database=ContaCorrenteDB;User Id=ebilieri; Password=tgn@859XYZ123456789;";
+        private readonly string StringConexao = @"Server=(localdb)\\mssqllocaldb;Database=ContaCorrenteDB;Trusted_Connection=True;MultipleActiveResultSets=true";
         private readonly IDbConnection conexao;
 
         private readonly IMovimentacaoRepository _movimentacaoRepository;
